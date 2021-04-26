@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+import auth from './middleware/auth'
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -29,6 +30,10 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
   ],
+
+  router: {
+    middleware: ['auth']
+  },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -66,7 +71,6 @@ export default {
           firestore: true,
           storage: true
         }
-
       }
     ]
   ],
